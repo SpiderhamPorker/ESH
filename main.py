@@ -11,7 +11,7 @@ def main():
 
         cmdline = input(comline)
 
-        if cmdline[0] == 'c' and cmdline[1] == 'd' and cmdline[2]== ' ':
+        if len(cmdline) > 3 and cmdline[0] == 'c' and cmdline[1] == 'd' and cmdline[2]== ' ':
                 cdpath = cmdline.removeprefix('cd ')
                 if os.path.exists(cdpath) == True:
                     os.chdir(cdpath)
@@ -69,7 +69,7 @@ def main():
 
         cmdline = input(comline)
 
-        if cmdline[0] == 'c' and cmdline[1]=='d' and cmdline == ' ':
+        if len(cmdline) > 3 and cmdline[0] == 'c' and cmdline[1]=='d' and cmdline[2] == ' ':
             cdpath=cmdline.removeprefix('cd ')
             if os.path.exists(cdpath) == True:
                 os.chdir(cdpath)
