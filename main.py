@@ -11,6 +11,15 @@ def main():
 
         cmdline = input(comline)
 
+        if cmdline == 'cd':
+            cdpath=input('Where do you want to go? ')
+            if os.path.exists(cdpath):
+                os.chdir(cdpath)
+                lang_en()
+            else:
+                print('Path not found. Please try again.')
+                lang_en()
+                
         if len(cmdline) > 3 and cmdline[0] == 'c' and cmdline[1] == 'd' and cmdline[2]== ' ':
                 cdpath = cmdline.removeprefix('cd ')
                 if os.path.exists(cdpath) == True:
@@ -69,6 +78,14 @@ def main():
 
         cmdline = input(comline)
 
+        if cmdline == 'cd':
+            cdpath=input('¿A dónde quieres ir? ')
+            if os.path.exists(cdpath):
+                os.chdir(cdpath)
+                lang_es()
+            else:
+                print('Ruta no encontrada. Por favor, pruebe de nuevo.')
+                lang_es()
         if len(cmdline) > 3 and cmdline[0] == 'c' and cmdline[1]=='d' and cmdline[2] == ' ':
             cdpath=cmdline.removeprefix('cd ')
             if os.path.exists(cdpath) == True:
